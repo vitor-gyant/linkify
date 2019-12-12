@@ -15,5 +15,5 @@ void main() {
   // Output [EmailElement: 'person@example.com' (person@example.com)]
 
   print(linkify("[telephone](tel:123-232-124)"));
-  //Output [LinkElement: 'tel://123-232-124' (telephone)]
+  //Output [TelephoneElement: 'tel://123-232-124' (telephone)]
 }

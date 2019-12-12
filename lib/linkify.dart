@@ -205,7 +205,7 @@ List<LinkifyElement> linkify(
           formattedEmailMatch.group(4).replaceFirst(RegExp(r"mailto:"), ""),
         ));
       }
-    } else if (looseEmailMatch != null && formattedEmailMatch == null) {
+    } else if (looseEmailMatch != null) {
       list.add(EmailElement(
           looseEmailMatch.group(0).replaceFirst(RegExp(r"mailto:"), "")));
       text = text.replaceFirst(looseEmailMatch.group(0), "");

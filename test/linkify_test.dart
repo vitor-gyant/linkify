@@ -75,10 +75,24 @@ void main() {
     );
   });
 
-  test('Parses email', () {
+  test('Parses loose email', () {
     expectListEqual(
       linkify("person@example.com"),
       [EmailElement("person@example.com")],
+    );
+  });
+
+  test('Parses formated email', () {
+    expectListEqual(
+      linkify("[person](mailto:person@example.com)"),
+      [TextElement("person"), EmailElement("person@example.com")],
+    );
+  });
+
+  test('Parses telephone', () {
+    expectListEqual(
+      linkify("[telephone](tel:123-232-124)"),
+      [TelephoneElement("123-232-124", "telephone")],
     );
   });
 
